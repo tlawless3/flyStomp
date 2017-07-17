@@ -101,6 +101,8 @@ var render = {
 
 };
 
+
+
 var utilities = {
   //dx dy direction x direction y of fly
   dx: 0,
@@ -139,15 +141,25 @@ var utilities = {
     }
   },
 
+  //function for win state
+  win: function(){
+    clearInterval(drawBoard);
+    $("#gameWrapper").html("<div> \
+    <p> YOU WIN!!! </p>  \
+    <p onclick='function(){utilities.reset}'\
+    > click here to play again </p> \
+    </div>")
+  },
+
   //detects if foot and fly collide
   footFlyCollision: function(){
-    if(this.flyY < this.footY + 400 && this.flyX > this.footX && this.flyX < this.footX +120){
-      alert("you win");
+    if(this.flyY < this.footY + 400 && this.flyX > this.footX && this.flyX < this.footX +133){
+      this.win();
     }
-  }
+  },
 };
 
-setInterval(function(){render.drawGame();}, 10);
+var drawBoard = setInterval(function(){render.drawGame();}, 10);
 
 //key listeners
 $( document ).ready(function() {
