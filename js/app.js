@@ -146,9 +146,9 @@ var utilities = {
     clearInterval(drawBoard);
     $("#gameWrapper").html("<div> \
     <p> YOU WIN!!! </p>  \
-    <p onclick='function(){utilities.reset}'\
-    > click here to play again </p> \
-    </div>")
+    <p\
+    > refresh to play again </p> \
+    </div>");
   },
 
   //detects if foot and fly collide
