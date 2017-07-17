@@ -41,15 +41,18 @@ var render = {
       var canvas = document.getElementById("gameCanvas");
       var ctx = canvas.getContext("2d");
 
+      //gets foot coords
       var footX = utilities.footX;
       utilities.footY += 3;
 
-
+      //draws foot
       drawing = new Image();
       drawing.src = "imgs\\foot.png";
       drawing.onload = function(){
         ctx.drawImage(drawing, footX, utilities.footY, 133, 400)
       };
+
+      utilities.footFlyCollision();
 
       if(utilities.footY > 1){
         utilities.footCycle = false;
@@ -78,7 +81,7 @@ var render = {
     if(utilities.flyX > 750){
       utilities.flyX = 750;
     } else if (utilities.flyX < 50){
-      utilities.flyx = 50;
+      utilities.flyX = 50;
     }
     if(utilities.flyY > 350){
       utilities.flyY = 350;
@@ -136,9 +139,11 @@ var utilities = {
     }
   },
 
-  //TODO detect if foot and fly collide
+  //detects if foot and fly collide
   footFlyCollision: function(){
-
+    if(this.flyY < this.footY + 400 && this.flyX > this.footX && this.flyX < this.footX +120){
+      alert("you win");
+    }
   }
 };
 
