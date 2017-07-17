@@ -51,7 +51,7 @@ var render = {
         ctx.drawImage(drawing, footX, utilities.footY, 133, 400)
       };
 
-      if(utilities.footY === 0){
+      if(utilities.footY > 1){
         utilities.footCycle = false;
         utilities.footY = -450;
       }
@@ -149,32 +149,32 @@ $( document ).ready(function() {
     window.onkeydown = function(e){
       var key = e.KeyCode ? e.KeyCode : e.which;
       //a
-      if(key === 65){
+      if(key === 65 && !utilities.footCycle){
         utilities.footCycle = true;
         utilities.setFootX("A");
       }
       //s
-      else if(key === 83){
+      else if(key === 83 && !utilities.footCycle){
         utilities.footCycle = true;
         utilities.setFootX("S");
       }
       //d
-      else if(key === 68){
+      else if(key === 68 && !utilities.footCycle){
         utilities.footCycle = true;
         utilities.setFootX("D");
       }
       //j
-      else if(key === 74){
+      else if(key === 74 && !utilities.footCycle){
         utilities.footCycle = true;
         utilities.setFootX("J");
       }
       //k
-      else if(key === 75){
+      else if(key === 75 && !utilities.footCycle){
         utilities.footCycle = true;
         utilities.setFootX("K");
       }
       //l
-      else if(key === 76){
+      else if(key === 76 && !utilities.footCycle){
         utilities.footCycle = true;
         utilities.setFootX("L");
       }
