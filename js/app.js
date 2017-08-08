@@ -1,6 +1,3 @@
-var gameStatus = {
-
-};
 
 var render = {
 
